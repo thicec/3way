@@ -1,0 +1,6 @@
+git init
+git status
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/thicec/3way.git
+git push -u origin master

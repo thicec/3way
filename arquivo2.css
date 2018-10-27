@@ -1,0 +1,21 @@
+/* The element with the class "first" is bolded*/
+
+.first {
+	font-weight: bold;
+}
+
+/* All the elements with the class "done" are strike through */
+
+.second{
+	font-weight: bold;
+
+}
+
+.third{
+	font-weight: lighter;
+}
+
+.done{
+	text-decoration: line-through;
+}
+
