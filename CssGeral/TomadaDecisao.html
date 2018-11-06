@@ -1,0 +1,47 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<script type="text/javascript">
+		function definirIdade() {
+			var idade = prompt('Digite sua idade');
+			
+			if (isNaN(idade)) 
+			alert('Entrada invalida');
+			
+
+			else if (idade < 12) {
+			alert('Criança.');
+			}
+			else if (idade < 14) {
+				alert ('Pre-adolescente.');
+			}
+			else if (idade < 18) {
+				alert ('Adolescente.');
+			}
+			else if (idade < 60) {
+				alert ('Adulto.');
+			}
+			else { alert('idoso.');
+			}
+			console.log('Fim da execucao da Funcao');
+var Moto = {
+	Marca: "honda",
+	Modelo: "Hornet",
+	Cor: "Preta"
+}
+for ( descricao in Moto){
+	document.write(descricao +" = "+ Moto[descricao] + "<br>");
+}
+
+
+	}	
+	</script>
+
+		<title></title>
+	</head>
+	<body>
+<input type="button" onClick="definirIdade()" value="chamarFuncao">
+
+
+	</body>
+	</html>

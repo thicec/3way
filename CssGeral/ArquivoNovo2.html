@@ -1,0 +1,48 @@
+		<!DOCTYPE html>
+		<html>
+		<head>
+<script type="text/javascript">
+			function buscar(titulo){
+				alert("O valor recebido por parametro foi: "+titulo.value);
+
+				var livros = ["nome do livro 01", "nome do livro 02", "nome do livro 03"];
+				var filmes = ["Venon", "Vingadores", "Sinais"];
+
+				if(titulo.value == "livros"){
+					alert(livros);
+					
+				}else if (titulo.value == "filmes"){
+					alert(filmes);
+				}
+				document.write("Hello World!");
+			}
+
+
+	</script>
+			<title></title>
+		</head>
+		<body>
+		<link href="css/bootstrap.css" rel="stylesheet">
+
+		<div class="col-sm-6">
+		<div class="panel panel-primary painel-cadastro">
+		<div class="panel-heading">Cadastro</div>
+		<div class="panel-body">
+
+			<form name="myForm" onsubmit="buscar(nome)">
+				<div class="row">
+
+					<fieldset>
+
+			<div class="form-group">
+				<label for="nome">Nome Completo</label>
+				<input type="text" class="form-control" id="nome" name="name" autofocus required></div>
+
+					</fieldset>
+	<input type="submit" class="btn btn-primary" value="Confirmar">
+		</form>
+	</div>
+
+	</div>
+		</body>
+		</html>
