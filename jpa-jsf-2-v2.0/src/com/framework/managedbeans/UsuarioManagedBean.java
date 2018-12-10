@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
@@ -36,13 +37,24 @@ public class UsuarioManagedBean {
 	}
 	
 	public String incluirUsuarioDb(Usuario usuario) {
-		usuarioDAO.inserirUsuario(usuario);
-		return "/listagemUsuarios";
+		if (!usuarioDAO.inserirUsuario(usuario)) {
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Erro: Usuario já existe!", null));
+			context.getExternalContext().getFlash().setKeepMessages(true);
+			return "/restrito/novoUsuario.xhtml?faces-redirect=true";	
+		}
+		return "/restrito/listagemUsuarios?faces-redirect=true";
+	}
+	
+	public String editarUsuarioDb(Usuario usuario) {
+		usuarioDAO.alterarUsuario(usuario);
+		return "/restrito/listagemUsuarios?faces-redirect=true";
+		
 	}
 	
 	
 	public String paginaEditar(Usuario usuario) {
-		return "/editarUsuario?faces-redirect=true&id="+usuario.getId();
+		return "/restrito/editarUsuario?faces-redirect=true&id="+usuario.getId();
 	}
 
 	public Usuario getUsuario() {

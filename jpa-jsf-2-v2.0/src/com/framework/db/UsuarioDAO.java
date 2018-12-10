@@ -100,4 +100,10 @@ public class UsuarioDAO {
 			return null;
 		}
 	}
+	
+	public void alterarUsuario(Usuario usuario) {
+		transaction.begin();
+		em.merge(usuario);
+		transaction.commit();
+	}
 }
